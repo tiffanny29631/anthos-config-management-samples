@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: dependsontest
+  name: pod2
+  annotations:
+    config.kubernetes.io/depends-on: /namespaces/dependsontest/Pod/pod1
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
