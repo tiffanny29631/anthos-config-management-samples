@@ -21,6 +21,6 @@ metadata:
     marketplace.com/comments: "What about chess?"
 data:
   single_player: "20"
-  new_field: "80"
+  cooperative: "60"
   competitive: "300"
 # [END anthosconfig_config_sync_quickstart_multirepo_gamestore_configmap_inventory] 
