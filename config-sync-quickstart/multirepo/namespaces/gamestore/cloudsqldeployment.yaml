@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
         - name: cloud-sql-proxy
-          image: gcr.io/cloudsql-docker/gce-proxy:1.24.0
-          command:
+          image: gcr.io/cloudsql-docker/cloud-sql-proxy:2.1.0
+          args:
             - "/cloud_sql_proxy"
             - "-instances=peip-kube-dev:us-central1:peip-sql-instance=tcp:3306"
             - "-credential_file=/secrets/cloudsql/credentials.json"
