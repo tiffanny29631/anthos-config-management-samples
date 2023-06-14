@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wp-cli-service # kpt-set: ${app-name}
+  namespace: gamestore
   labels:
     app: wp-cli-service # kpt-set: ${app-name}
 spec:
@@ -14,7 +15,6 @@ spec:
       labels:
         app: wp-cli-service # kpt-set: ${app-name}
     spec:
-      serviceAccountName: wp-cli-service # kpt-set: ${app-name}
       securityContext:
         # All containers must run as a non-root user; we choose 10101 as
         # a uid/gid that is unlikely to conflict with any container.
@@ -30,38 +30,13 @@ spec:
       hostIPC: false
       containers:
       - name: cloudsql-proxy
-        image: "gcr.io/cloud-sql-connectors/cloud-sql-proxy:2.3.0" # kpt-set: gcr.io/cloud-sql-connectors/cloud-sql-proxy:${proxy-image-version}
-        args:
-        - --structured-logs=true
-        - --private-ip
-        - --health-check # enable HTTP health checks
-        - --http-address=0.0.0.0 # used for healtcheck probes
-        - --http-port=7070 # kpt-set: --http-port=${cloudsql-healthcheck-port}
-        - wpe-wp-cli-service-dev:us-east1:wp-cli-service # kpt-set: ${app-project}:${db-region}:${db-instance}
-        startupProbe:
-          # A startup probe will ensure that service traffic will be routed to
-          # the pod only after all containers in the pod have successfully started.
-          httpGet:
-            path: /startup
-            port: 7070 # kpt-set: ${cloudsql-healthcheck-port}
-          periodSeconds: 1
-          timeoutSeconds: 5
-          failureThreshold: 20
-        livenessProbe: # GCP recommends a liveness probe.
-          httpGet:
-            path: /liveness
-            port: 7070 # kpt-set: ${cloudsql-healthcheck-port}
-          initialDelaySeconds: 0 # Not necessary when the startup probe is in use.
-          periodSeconds: 60
-          timeoutSeconds: 30
-          # If periodSeconds = 60, 5 tries will result in five minutes of checks
-          # The proxy starts to refresh a certificate five minutes before its expiration.
-          # If those five minutes lapse without a successful refresh, the liveness probe
-          # will fail and the container will be restarted.
-          failureThreshold: 5
-        # readinessProbe is not recommended by GCP in most circumstances. For more info, see
-        # https://github.com/GoogleCloudPlatform/cloud-sql-proxy/tree/main/examples/k8s-health-check#readiness-health-check-configuration
-
+        image: "gcr.io/cloudsql-docker/gce-proxy:1.21.0" # kpt-set: gcr.io/cloudsql-docker/gce-proxy:${proxy-image-version}
+        command:
+        - "/cloud_sql_proxy"
+        - "-instances=wpe-wp-cli-service-dev:us-east1:wp-cli-service=tcp:5432" # kpt-set: -instances=${app-project}:${db-region}:${db-instance}=tcp:5432
+        - "-ip_address_types=PRIVATE"
+        - "-structured_logs=true"
+        - "-verbose=false"
         securityContext:
           # The container must run as a non-root user; we choose 10101 as
           # a uid/gid that is unlikely to conflict with any container.
@@ -99,5 +74,4 @@ spec:
                   app: wp-cli-service # kpt-set: ${app-name}
               topologyKey: topology.kubernetes.io/zone
             weight: 100
-
 
