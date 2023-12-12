@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-monitoring-cm1
+  namespace: config-management-monitoring
+data:
+  # Define key-value pairs for your configuration data
+  key1: "value1"
+  key2: "value2"
