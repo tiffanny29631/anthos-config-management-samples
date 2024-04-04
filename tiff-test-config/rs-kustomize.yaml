@@ -1,0 +1,19 @@
+# root-sync.yaml
+# If you are using a Config Sync version earlier than 1.7.0,
+# use: apiVersion: configsync.gke.io/v1alpha1
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: root-sync-kustomize
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  git:
+    #repo: https://github.com/haiyanmeng/csmr-sample
+    repo: https://github.com/tiffanny29631/anthos-config-management-samples
+    branch: many-ns
+      #branch: master
+    auth: none
+      #dir: bookstore
+      #dir: config-sync-quickstart/multirepo/root
+    dir: namespace-specific-policy/automated-rendering
