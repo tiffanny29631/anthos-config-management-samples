@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: rs-oci
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  sourceType: oci
+  oci:
+    image: us-central1-docker.pkg.dev/peip-monitor/peip-ar-repo/test-namespace:v1
+    dir: .
+    auth: gcpserviceaccount
+    gcpServiceAccountEmail: ar-reader@peip-monitor.iam.gserviceaccount.com
