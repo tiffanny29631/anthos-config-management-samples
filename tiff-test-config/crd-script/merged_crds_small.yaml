@@ -1,0 +1,3505 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-namespace
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-1.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-1s
+    singular: my-custom-resource-1
+    kind: my-custom-resource-1
+    listKind: my-custom-resource-1List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-1
+metadata:
+  name: my-custom-resource-1-instance
+  namespace: my-namespace
+spec:
+  largeField: "NCn1PeCJFyoRrw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-2.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-2s
+    singular: my-custom-resource-2
+    kind: my-custom-resource-2
+    listKind: my-custom-resource-2List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-2
+metadata:
+  name: my-custom-resource-2-instance
+  namespace: my-namespace
+spec:
+  largeField: "MLpiZEMoMX/2zA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-3.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-3s
+    singular: my-custom-resource-3
+    kind: my-custom-resource-3
+    listKind: my-custom-resource-3List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-3
+metadata:
+  name: my-custom-resource-3-instance
+  namespace: my-namespace
+spec:
+  largeField: "EA7pfWFQ/RK1iA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-4.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-4s
+    singular: my-custom-resource-4
+    kind: my-custom-resource-4
+    listKind: my-custom-resource-4List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-4
+metadata:
+  name: my-custom-resource-4-instance
+  namespace: my-namespace
+spec:
+  largeField: "rr9rDZRrgoTu5g=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-5.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-5s
+    singular: my-custom-resource-5
+    kind: my-custom-resource-5
+    listKind: my-custom-resource-5List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-5
+metadata:
+  name: my-custom-resource-5-instance
+  namespace: my-namespace
+spec:
+  largeField: "nsq19blvmHTFyA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-6.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-6s
+    singular: my-custom-resource-6
+    kind: my-custom-resource-6
+    listKind: my-custom-resource-6List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-6
+metadata:
+  name: my-custom-resource-6-instance
+  namespace: my-namespace
+spec:
+  largeField: "w6+xKmpdFvPaNA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-7.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-7s
+    singular: my-custom-resource-7
+    kind: my-custom-resource-7
+    listKind: my-custom-resource-7List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-7
+metadata:
+  name: my-custom-resource-7-instance
+  namespace: my-namespace
+spec:
+  largeField: "Uo0/muooMEVrJA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-8.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-8s
+    singular: my-custom-resource-8
+    kind: my-custom-resource-8
+    listKind: my-custom-resource-8List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-8
+metadata:
+  name: my-custom-resource-8-instance
+  namespace: my-namespace
+spec:
+  largeField: "w8V75yJtzMIwaQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-9.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-9s
+    singular: my-custom-resource-9
+    kind: my-custom-resource-9
+    listKind: my-custom-resource-9List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-9
+metadata:
+  name: my-custom-resource-9-instance
+  namespace: my-namespace
+spec:
+  largeField: "QVe7zJLG3Uhabg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-10.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-10s
+    singular: my-custom-resource-10
+    kind: my-custom-resource-10
+    listKind: my-custom-resource-10List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-10
+metadata:
+  name: my-custom-resource-10-instance
+  namespace: my-namespace
+spec:
+  largeField: "ZODGzuOw/eaAiw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-11.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-11s
+    singular: my-custom-resource-11
+    kind: my-custom-resource-11
+    listKind: my-custom-resource-11List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-11
+metadata:
+  name: my-custom-resource-11-instance
+  namespace: my-namespace
+spec:
+  largeField: "YaTEjlmbLEGmTg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-12.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-12s
+    singular: my-custom-resource-12
+    kind: my-custom-resource-12
+    listKind: my-custom-resource-12List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-12
+metadata:
+  name: my-custom-resource-12-instance
+  namespace: my-namespace
+spec:
+  largeField: "W0pomg80YZpesA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-13.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-13s
+    singular: my-custom-resource-13
+    kind: my-custom-resource-13
+    listKind: my-custom-resource-13List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-13
+metadata:
+  name: my-custom-resource-13-instance
+  namespace: my-namespace
+spec:
+  largeField: "eC00nvIUKel+aQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-14.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-14s
+    singular: my-custom-resource-14
+    kind: my-custom-resource-14
+    listKind: my-custom-resource-14List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-14
+metadata:
+  name: my-custom-resource-14-instance
+  namespace: my-namespace
+spec:
+  largeField: "00WiU0IEinq3kQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-15.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-15s
+    singular: my-custom-resource-15
+    kind: my-custom-resource-15
+    listKind: my-custom-resource-15List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-15
+metadata:
+  name: my-custom-resource-15-instance
+  namespace: my-namespace
+spec:
+  largeField: "QLwTzr9ywCsILw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-16.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-16s
+    singular: my-custom-resource-16
+    kind: my-custom-resource-16
+    listKind: my-custom-resource-16List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-16
+metadata:
+  name: my-custom-resource-16-instance
+  namespace: my-namespace
+spec:
+  largeField: "nOJtzeiy/ewX0Q=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-17.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-17s
+    singular: my-custom-resource-17
+    kind: my-custom-resource-17
+    listKind: my-custom-resource-17List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-17
+metadata:
+  name: my-custom-resource-17-instance
+  namespace: my-namespace
+spec:
+  largeField: "C4bHvHsCPT9tHA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-18.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-18s
+    singular: my-custom-resource-18
+    kind: my-custom-resource-18
+    listKind: my-custom-resource-18List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-18
+metadata:
+  name: my-custom-resource-18-instance
+  namespace: my-namespace
+spec:
+  largeField: "sOct/l50SKSJDA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-19.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-19s
+    singular: my-custom-resource-19
+    kind: my-custom-resource-19
+    listKind: my-custom-resource-19List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-19
+metadata:
+  name: my-custom-resource-19-instance
+  namespace: my-namespace
+spec:
+  largeField: "6Ox7k9Sl5vgcpw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-20.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-20s
+    singular: my-custom-resource-20
+    kind: my-custom-resource-20
+    listKind: my-custom-resource-20List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-20
+metadata:
+  name: my-custom-resource-20-instance
+  namespace: my-namespace
+spec:
+  largeField: "7YuXbEUBfOTXeA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-21.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-21s
+    singular: my-custom-resource-21
+    kind: my-custom-resource-21
+    listKind: my-custom-resource-21List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-21
+metadata:
+  name: my-custom-resource-21-instance
+  namespace: my-namespace
+spec:
+  largeField: "Osc72Hiw+yQiyg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-22.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-22s
+    singular: my-custom-resource-22
+    kind: my-custom-resource-22
+    listKind: my-custom-resource-22List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-22
+metadata:
+  name: my-custom-resource-22-instance
+  namespace: my-namespace
+spec:
+  largeField: "cOv2nGObAVK8fg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-23.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-23s
+    singular: my-custom-resource-23
+    kind: my-custom-resource-23
+    listKind: my-custom-resource-23List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-23
+metadata:
+  name: my-custom-resource-23-instance
+  namespace: my-namespace
+spec:
+  largeField: "o+Rs6+WZ4x7EHA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-24.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-24s
+    singular: my-custom-resource-24
+    kind: my-custom-resource-24
+    listKind: my-custom-resource-24List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-24
+metadata:
+  name: my-custom-resource-24-instance
+  namespace: my-namespace
+spec:
+  largeField: "gfGm7Ix3onea0g=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-25.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-25s
+    singular: my-custom-resource-25
+    kind: my-custom-resource-25
+    listKind: my-custom-resource-25List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-25
+metadata:
+  name: my-custom-resource-25-instance
+  namespace: my-namespace
+spec:
+  largeField: "A4zxqeEnMCmzjQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-26.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-26s
+    singular: my-custom-resource-26
+    kind: my-custom-resource-26
+    listKind: my-custom-resource-26List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-26
+metadata:
+  name: my-custom-resource-26-instance
+  namespace: my-namespace
+spec:
+  largeField: "A4pwJ/h9TTvPig=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-27.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-27s
+    singular: my-custom-resource-27
+    kind: my-custom-resource-27
+    listKind: my-custom-resource-27List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-27
+metadata:
+  name: my-custom-resource-27-instance
+  namespace: my-namespace
+spec:
+  largeField: "byHrv57SKEDiuA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-28.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-28s
+    singular: my-custom-resource-28
+    kind: my-custom-resource-28
+    listKind: my-custom-resource-28List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-28
+metadata:
+  name: my-custom-resource-28-instance
+  namespace: my-namespace
+spec:
+  largeField: "LXYJf4okrnNhSg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-29.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-29s
+    singular: my-custom-resource-29
+    kind: my-custom-resource-29
+    listKind: my-custom-resource-29List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-29
+metadata:
+  name: my-custom-resource-29-instance
+  namespace: my-namespace
+spec:
+  largeField: "XFW0Cx1Px9yj7A=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-30.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-30s
+    singular: my-custom-resource-30
+    kind: my-custom-resource-30
+    listKind: my-custom-resource-30List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-30
+metadata:
+  name: my-custom-resource-30-instance
+  namespace: my-namespace
+spec:
+  largeField: "HOhvhnZoXzB2sQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-31.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-31s
+    singular: my-custom-resource-31
+    kind: my-custom-resource-31
+    listKind: my-custom-resource-31List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-31
+metadata:
+  name: my-custom-resource-31-instance
+  namespace: my-namespace
+spec:
+  largeField: "NHBXmt+IMg5ROQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-32.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-32s
+    singular: my-custom-resource-32
+    kind: my-custom-resource-32
+    listKind: my-custom-resource-32List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-32
+metadata:
+  name: my-custom-resource-32-instance
+  namespace: my-namespace
+spec:
+  largeField: "FnvFtVn/5ULdxA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-33.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-33s
+    singular: my-custom-resource-33
+    kind: my-custom-resource-33
+    listKind: my-custom-resource-33List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-33
+metadata:
+  name: my-custom-resource-33-instance
+  namespace: my-namespace
+spec:
+  largeField: "1feBN8vCFjLiTA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-34.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-34s
+    singular: my-custom-resource-34
+    kind: my-custom-resource-34
+    listKind: my-custom-resource-34List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-34
+metadata:
+  name: my-custom-resource-34-instance
+  namespace: my-namespace
+spec:
+  largeField: "DDzakb8sQq5B0g=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-35.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-35s
+    singular: my-custom-resource-35
+    kind: my-custom-resource-35
+    listKind: my-custom-resource-35List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-35
+metadata:
+  name: my-custom-resource-35-instance
+  namespace: my-namespace
+spec:
+  largeField: "OuQBeNSkFHZAbQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-36.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-36s
+    singular: my-custom-resource-36
+    kind: my-custom-resource-36
+    listKind: my-custom-resource-36List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-36
+metadata:
+  name: my-custom-resource-36-instance
+  namespace: my-namespace
+spec:
+  largeField: "BHoY3NE6cn9jxw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-37.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-37s
+    singular: my-custom-resource-37
+    kind: my-custom-resource-37
+    listKind: my-custom-resource-37List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-37
+metadata:
+  name: my-custom-resource-37-instance
+  namespace: my-namespace
+spec:
+  largeField: "mZpI8oO4Pj6IDQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-38.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-38s
+    singular: my-custom-resource-38
+    kind: my-custom-resource-38
+    listKind: my-custom-resource-38List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-38
+metadata:
+  name: my-custom-resource-38-instance
+  namespace: my-namespace
+spec:
+  largeField: "HIFHKBGISS9UAA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-39.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-39s
+    singular: my-custom-resource-39
+    kind: my-custom-resource-39
+    listKind: my-custom-resource-39List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-39
+metadata:
+  name: my-custom-resource-39-instance
+  namespace: my-namespace
+spec:
+  largeField: "AHrinlcstoZ/Ng=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-40.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-40s
+    singular: my-custom-resource-40
+    kind: my-custom-resource-40
+    listKind: my-custom-resource-40List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-40
+metadata:
+  name: my-custom-resource-40-instance
+  namespace: my-namespace
+spec:
+  largeField: "tSJ67/CVBRFl2w=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-41.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-41s
+    singular: my-custom-resource-41
+    kind: my-custom-resource-41
+    listKind: my-custom-resource-41List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-41
+metadata:
+  name: my-custom-resource-41-instance
+  namespace: my-namespace
+spec:
+  largeField: "D357FybZhJzyXg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-42.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-42s
+    singular: my-custom-resource-42
+    kind: my-custom-resource-42
+    listKind: my-custom-resource-42List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-42
+metadata:
+  name: my-custom-resource-42-instance
+  namespace: my-namespace
+spec:
+  largeField: "qi0mf7f+zOqbhA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-43.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-43s
+    singular: my-custom-resource-43
+    kind: my-custom-resource-43
+    listKind: my-custom-resource-43List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-43
+metadata:
+  name: my-custom-resource-43-instance
+  namespace: my-namespace
+spec:
+  largeField: "O3tRtcTFen8+iQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-44.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-44s
+    singular: my-custom-resource-44
+    kind: my-custom-resource-44
+    listKind: my-custom-resource-44List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-44
+metadata:
+  name: my-custom-resource-44-instance
+  namespace: my-namespace
+spec:
+  largeField: "OI9vjqnKg45+pw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-45.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-45s
+    singular: my-custom-resource-45
+    kind: my-custom-resource-45
+    listKind: my-custom-resource-45List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-45
+metadata:
+  name: my-custom-resource-45-instance
+  namespace: my-namespace
+spec:
+  largeField: "1llS9R3Bss/3lA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-46.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-46s
+    singular: my-custom-resource-46
+    kind: my-custom-resource-46
+    listKind: my-custom-resource-46List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-46
+metadata:
+  name: my-custom-resource-46-instance
+  namespace: my-namespace
+spec:
+  largeField: "rupHEjP9wuhghw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-47.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-47s
+    singular: my-custom-resource-47
+    kind: my-custom-resource-47
+    listKind: my-custom-resource-47List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-47
+metadata:
+  name: my-custom-resource-47-instance
+  namespace: my-namespace
+spec:
+  largeField: "tVHQEIkzpi/azA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-48.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-48s
+    singular: my-custom-resource-48
+    kind: my-custom-resource-48
+    listKind: my-custom-resource-48List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-48
+metadata:
+  name: my-custom-resource-48-instance
+  namespace: my-namespace
+spec:
+  largeField: "mUmcB8mxw3mAKQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-49.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-49s
+    singular: my-custom-resource-49
+    kind: my-custom-resource-49
+    listKind: my-custom-resource-49List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-49
+metadata:
+  name: my-custom-resource-49-instance
+  namespace: my-namespace
+spec:
+  largeField: "ePindzsDyRsEoQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-50.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-50s
+    singular: my-custom-resource-50
+    kind: my-custom-resource-50
+    listKind: my-custom-resource-50List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-50
+metadata:
+  name: my-custom-resource-50-instance
+  namespace: my-namespace
+spec:
+  largeField: "VLugEZICyEGlYA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-51.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-51s
+    singular: my-custom-resource-51
+    kind: my-custom-resource-51
+    listKind: my-custom-resource-51List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-51
+metadata:
+  name: my-custom-resource-51-instance
+  namespace: my-namespace
+spec:
+  largeField: "+0fVVbFaWj8jqg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-52.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-52s
+    singular: my-custom-resource-52
+    kind: my-custom-resource-52
+    listKind: my-custom-resource-52List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-52
+metadata:
+  name: my-custom-resource-52-instance
+  namespace: my-namespace
+spec:
+  largeField: "hu0UpPg3+svpCQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-53.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-53s
+    singular: my-custom-resource-53
+    kind: my-custom-resource-53
+    listKind: my-custom-resource-53List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-53
+metadata:
+  name: my-custom-resource-53-instance
+  namespace: my-namespace
+spec:
+  largeField: "HixT9xGCnfvFHA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-54.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-54s
+    singular: my-custom-resource-54
+    kind: my-custom-resource-54
+    listKind: my-custom-resource-54List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-54
+metadata:
+  name: my-custom-resource-54-instance
+  namespace: my-namespace
+spec:
+  largeField: "mqnI7ka0SItSKQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-55.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-55s
+    singular: my-custom-resource-55
+    kind: my-custom-resource-55
+    listKind: my-custom-resource-55List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-55
+metadata:
+  name: my-custom-resource-55-instance
+  namespace: my-namespace
+spec:
+  largeField: "C+4xiGCPaEuHLw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-56.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-56s
+    singular: my-custom-resource-56
+    kind: my-custom-resource-56
+    listKind: my-custom-resource-56List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-56
+metadata:
+  name: my-custom-resource-56-instance
+  namespace: my-namespace
+spec:
+  largeField: "R5G8EgOz/6Sk5Q=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-57.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-57s
+    singular: my-custom-resource-57
+    kind: my-custom-resource-57
+    listKind: my-custom-resource-57List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-57
+metadata:
+  name: my-custom-resource-57-instance
+  namespace: my-namespace
+spec:
+  largeField: "pyWSXe1/bCrg3g=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-58.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-58s
+    singular: my-custom-resource-58
+    kind: my-custom-resource-58
+    listKind: my-custom-resource-58List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-58
+metadata:
+  name: my-custom-resource-58-instance
+  namespace: my-namespace
+spec:
+  largeField: "pD3OUkyxZY2NIA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-59.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-59s
+    singular: my-custom-resource-59
+    kind: my-custom-resource-59
+    listKind: my-custom-resource-59List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-59
+metadata:
+  name: my-custom-resource-59-instance
+  namespace: my-namespace
+spec:
+  largeField: "A1L8RZS7bKEJdQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-60.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-60s
+    singular: my-custom-resource-60
+    kind: my-custom-resource-60
+    listKind: my-custom-resource-60List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-60
+metadata:
+  name: my-custom-resource-60-instance
+  namespace: my-namespace
+spec:
+  largeField: "yCvMvwy6dP8qRA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-61.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-61s
+    singular: my-custom-resource-61
+    kind: my-custom-resource-61
+    listKind: my-custom-resource-61List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-61
+metadata:
+  name: my-custom-resource-61-instance
+  namespace: my-namespace
+spec:
+  largeField: "CMNtwwWvRpqKNQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-62.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-62s
+    singular: my-custom-resource-62
+    kind: my-custom-resource-62
+    listKind: my-custom-resource-62List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-62
+metadata:
+  name: my-custom-resource-62-instance
+  namespace: my-namespace
+spec:
+  largeField: "hTNNZ4BoGVObWw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-63.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-63s
+    singular: my-custom-resource-63
+    kind: my-custom-resource-63
+    listKind: my-custom-resource-63List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-63
+metadata:
+  name: my-custom-resource-63-instance
+  namespace: my-namespace
+spec:
+  largeField: "O+uJlDFE/J8fIA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-64.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-64s
+    singular: my-custom-resource-64
+    kind: my-custom-resource-64
+    listKind: my-custom-resource-64List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-64
+metadata:
+  name: my-custom-resource-64-instance
+  namespace: my-namespace
+spec:
+  largeField: "3tunYiYD3K7WbQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-65.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-65s
+    singular: my-custom-resource-65
+    kind: my-custom-resource-65
+    listKind: my-custom-resource-65List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-65
+metadata:
+  name: my-custom-resource-65-instance
+  namespace: my-namespace
+spec:
+  largeField: "t8tDXxXlCZAyCQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-66.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-66s
+    singular: my-custom-resource-66
+    kind: my-custom-resource-66
+    listKind: my-custom-resource-66List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-66
+metadata:
+  name: my-custom-resource-66-instance
+  namespace: my-namespace
+spec:
+  largeField: "JVdj6IYFEAbUTg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-67.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-67s
+    singular: my-custom-resource-67
+    kind: my-custom-resource-67
+    listKind: my-custom-resource-67List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-67
+metadata:
+  name: my-custom-resource-67-instance
+  namespace: my-namespace
+spec:
+  largeField: "ac08YgI3Uy5oWg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-68.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-68s
+    singular: my-custom-resource-68
+    kind: my-custom-resource-68
+    listKind: my-custom-resource-68List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-68
+metadata:
+  name: my-custom-resource-68-instance
+  namespace: my-namespace
+spec:
+  largeField: "uqXZ+PkbbwXyZA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-69.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-69s
+    singular: my-custom-resource-69
+    kind: my-custom-resource-69
+    listKind: my-custom-resource-69List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-69
+metadata:
+  name: my-custom-resource-69-instance
+  namespace: my-namespace
+spec:
+  largeField: "DBSwjrlPH9FXqA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-70.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-70s
+    singular: my-custom-resource-70
+    kind: my-custom-resource-70
+    listKind: my-custom-resource-70List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-70
+metadata:
+  name: my-custom-resource-70-instance
+  namespace: my-namespace
+spec:
+  largeField: "rfCRlGxtyiz8qg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-71.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-71s
+    singular: my-custom-resource-71
+    kind: my-custom-resource-71
+    listKind: my-custom-resource-71List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-71
+metadata:
+  name: my-custom-resource-71-instance
+  namespace: my-namespace
+spec:
+  largeField: "qgMi9UTthnEtMw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-72.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-72s
+    singular: my-custom-resource-72
+    kind: my-custom-resource-72
+    listKind: my-custom-resource-72List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-72
+metadata:
+  name: my-custom-resource-72-instance
+  namespace: my-namespace
+spec:
+  largeField: "wp4wT5+dFbbb5A=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-73.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-73s
+    singular: my-custom-resource-73
+    kind: my-custom-resource-73
+    listKind: my-custom-resource-73List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-73
+metadata:
+  name: my-custom-resource-73-instance
+  namespace: my-namespace
+spec:
+  largeField: "T+9ExcPNLMDdBg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-74.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-74s
+    singular: my-custom-resource-74
+    kind: my-custom-resource-74
+    listKind: my-custom-resource-74List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-74
+metadata:
+  name: my-custom-resource-74-instance
+  namespace: my-namespace
+spec:
+  largeField: "BpavGMcIv4d4rw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-75.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-75s
+    singular: my-custom-resource-75
+    kind: my-custom-resource-75
+    listKind: my-custom-resource-75List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-75
+metadata:
+  name: my-custom-resource-75-instance
+  namespace: my-namespace
+spec:
+  largeField: "/cIo7dhNYhYEUA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-76.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-76s
+    singular: my-custom-resource-76
+    kind: my-custom-resource-76
+    listKind: my-custom-resource-76List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-76
+metadata:
+  name: my-custom-resource-76-instance
+  namespace: my-namespace
+spec:
+  largeField: "rKzLsac9b1qnBg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-77.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-77s
+    singular: my-custom-resource-77
+    kind: my-custom-resource-77
+    listKind: my-custom-resource-77List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-77
+metadata:
+  name: my-custom-resource-77-instance
+  namespace: my-namespace
+spec:
+  largeField: "Cue+YLhE39mOpA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-78.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-78s
+    singular: my-custom-resource-78
+    kind: my-custom-resource-78
+    listKind: my-custom-resource-78List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-78
+metadata:
+  name: my-custom-resource-78-instance
+  namespace: my-namespace
+spec:
+  largeField: "PBtz4SbAmAdELA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-79.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-79s
+    singular: my-custom-resource-79
+    kind: my-custom-resource-79
+    listKind: my-custom-resource-79List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-79
+metadata:
+  name: my-custom-resource-79-instance
+  namespace: my-namespace
+spec:
+  largeField: "yXkAtYujn43ERg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-80.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-80s
+    singular: my-custom-resource-80
+    kind: my-custom-resource-80
+    listKind: my-custom-resource-80List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-80
+metadata:
+  name: my-custom-resource-80-instance
+  namespace: my-namespace
+spec:
+  largeField: "1Y0y9RSxrOLiIw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-81.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-81s
+    singular: my-custom-resource-81
+    kind: my-custom-resource-81
+    listKind: my-custom-resource-81List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-81
+metadata:
+  name: my-custom-resource-81-instance
+  namespace: my-namespace
+spec:
+  largeField: "4j1IF4crf7+uEg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-82.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-82s
+    singular: my-custom-resource-82
+    kind: my-custom-resource-82
+    listKind: my-custom-resource-82List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-82
+metadata:
+  name: my-custom-resource-82-instance
+  namespace: my-namespace
+spec:
+  largeField: "EcUPJVfMcjYFCA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-83.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-83s
+    singular: my-custom-resource-83
+    kind: my-custom-resource-83
+    listKind: my-custom-resource-83List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-83
+metadata:
+  name: my-custom-resource-83-instance
+  namespace: my-namespace
+spec:
+  largeField: "0cjE4Ucq9pFiGw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-84.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-84s
+    singular: my-custom-resource-84
+    kind: my-custom-resource-84
+    listKind: my-custom-resource-84List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-84
+metadata:
+  name: my-custom-resource-84-instance
+  namespace: my-namespace
+spec:
+  largeField: "GyZXG2G2RFJWMg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-85.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-85s
+    singular: my-custom-resource-85
+    kind: my-custom-resource-85
+    listKind: my-custom-resource-85List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-85
+metadata:
+  name: my-custom-resource-85-instance
+  namespace: my-namespace
+spec:
+  largeField: "VEALNIXbjSELyg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-86.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-86s
+    singular: my-custom-resource-86
+    kind: my-custom-resource-86
+    listKind: my-custom-resource-86List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-86
+metadata:
+  name: my-custom-resource-86-instance
+  namespace: my-namespace
+spec:
+  largeField: "V4QLhP/to0/JeQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-87.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-87s
+    singular: my-custom-resource-87
+    kind: my-custom-resource-87
+    listKind: my-custom-resource-87List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-87
+metadata:
+  name: my-custom-resource-87-instance
+  namespace: my-namespace
+spec:
+  largeField: "Xr0jBWf/3iJYFg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-88.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-88s
+    singular: my-custom-resource-88
+    kind: my-custom-resource-88
+    listKind: my-custom-resource-88List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-88
+metadata:
+  name: my-custom-resource-88-instance
+  namespace: my-namespace
+spec:
+  largeField: "+EYNsAbuepMHaw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-89.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-89s
+    singular: my-custom-resource-89
+    kind: my-custom-resource-89
+    listKind: my-custom-resource-89List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-89
+metadata:
+  name: my-custom-resource-89-instance
+  namespace: my-namespace
+spec:
+  largeField: "S01bi+75VrM89A=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-90.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-90s
+    singular: my-custom-resource-90
+    kind: my-custom-resource-90
+    listKind: my-custom-resource-90List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-90
+metadata:
+  name: my-custom-resource-90-instance
+  namespace: my-namespace
+spec:
+  largeField: "rVqtSGJ4QHk+7g=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-91.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-91s
+    singular: my-custom-resource-91
+    kind: my-custom-resource-91
+    listKind: my-custom-resource-91List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-91
+metadata:
+  name: my-custom-resource-91-instance
+  namespace: my-namespace
+spec:
+  largeField: "zsA9tBEMWP79fQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-92.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-92s
+    singular: my-custom-resource-92
+    kind: my-custom-resource-92
+    listKind: my-custom-resource-92List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-92
+metadata:
+  name: my-custom-resource-92-instance
+  namespace: my-namespace
+spec:
+  largeField: "ETzUgCatIH7z9Q=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-93.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-93s
+    singular: my-custom-resource-93
+    kind: my-custom-resource-93
+    listKind: my-custom-resource-93List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-93
+metadata:
+  name: my-custom-resource-93-instance
+  namespace: my-namespace
+spec:
+  largeField: "tJ/lRuoLy/56bg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-94.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-94s
+    singular: my-custom-resource-94
+    kind: my-custom-resource-94
+    listKind: my-custom-resource-94List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-94
+metadata:
+  name: my-custom-resource-94-instance
+  namespace: my-namespace
+spec:
+  largeField: "NMa56bIKiuu2XA=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-95.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-95s
+    singular: my-custom-resource-95
+    kind: my-custom-resource-95
+    listKind: my-custom-resource-95List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-95
+metadata:
+  name: my-custom-resource-95-instance
+  namespace: my-namespace
+spec:
+  largeField: "SbxhQEGo5pF0gg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-96.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-96s
+    singular: my-custom-resource-96
+    kind: my-custom-resource-96
+    listKind: my-custom-resource-96List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-96
+metadata:
+  name: my-custom-resource-96-instance
+  namespace: my-namespace
+spec:
+  largeField: "ucApOA1/IKs8wg=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-97.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-97s
+    singular: my-custom-resource-97
+    kind: my-custom-resource-97
+    listKind: my-custom-resource-97List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-97
+metadata:
+  name: my-custom-resource-97-instance
+  namespace: my-namespace
+spec:
+  largeField: "nPYI95Mtj8FwJQ=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-98.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-98s
+    singular: my-custom-resource-98
+    kind: my-custom-resource-98
+    listKind: my-custom-resource-98List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-98
+metadata:
+  name: my-custom-resource-98-instance
+  namespace: my-namespace
+spec:
+  largeField: "OSXHJ+6QdGHw+A=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-99.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-99s
+    singular: my-custom-resource-99
+    kind: my-custom-resource-99
+    listKind: my-custom-resource-99List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-99
+metadata:
+  name: my-custom-resource-99-instance
+  namespace: my-namespace
+spec:
+  largeField: "DQk7SAjQ2FHmRw=="
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: my-custom-resource-100.my-namespace.example.com
+spec:
+  group: my-namespace.example.com
+  versions:
+    - name: v1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                largeField:
+                  type: string
+                  maxLength: 10
+  scope: Namespaced
+  names:
+    plural: my-custom-resource-100s
+    singular: my-custom-resource-100
+    kind: my-custom-resource-100
+    listKind: my-custom-resource-100List
+---
+apiVersion: my-namespace.example.com/v1
+kind: my-custom-resource-100
+metadata:
+  name: my-custom-resource-100-instance
+  namespace: my-namespace
+spec:
+  largeField: "bth7A/zd1d05Aw=="
+---
