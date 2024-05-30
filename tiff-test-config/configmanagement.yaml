@@ -6,4 +6,3 @@ metadata:
 spec:
   # Enable multi-repo mode to use additional features
   enableMultiRepo: true
-  preventDrift: false
