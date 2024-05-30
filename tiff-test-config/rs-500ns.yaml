@@ -1,0 +1,20 @@
+# root-sync.yaml
+# If you are using a Config Sync version earlier than 1.7.0,
+# use: apiVersion: configsync.gke.io/v1alpha1
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: rs-many-ns
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  git:
+    #repo: https://github.com/haiyanmeng/csmr-sample
+    #repo: https://github.com/tiffanny29631/anthos-config-management-samples
+    repo: https://github.com/tiffanny29631/2.5k-namespaces-test
+    branch: pptest
+      #branch: master
+    auth: none
+      #dir: bookstore
+    dir: 500ns
+      #dir: namespace-specific-policy/automated-rendering
