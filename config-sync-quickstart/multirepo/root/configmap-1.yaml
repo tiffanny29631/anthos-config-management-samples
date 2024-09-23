@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-1
+  namespace: config-management-monitoring
+data:
+  key: value1
