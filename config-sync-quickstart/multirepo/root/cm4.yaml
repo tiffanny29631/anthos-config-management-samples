@@ -1,4 +1,4 @@
-aiVersion: v1
+apiVersion: v1
 kind: ConfigMap
 metadata:
   name: test-monitoring-cm4
