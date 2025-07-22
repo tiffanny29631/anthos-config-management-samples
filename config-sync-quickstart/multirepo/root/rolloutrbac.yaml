@@ -1,0 +1,31 @@
+# source/my-app/rbac.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: argo-rollout-manager
+  namespace: my-app
+  # Labels to ensure Config Sync manages this RBAC
+  labels:
+    app.kubernetes.io/managed-by: configmanagement.gke.io
+rules:
+- apiGroups: ["argoproj.io"]
+  resources: ["rollouts", "rollouts/status", "rollouts/finalizers"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: argo-rollout-binding
+  namespace: my-app
+  # Labels to ensure Config Sync manages this RBAC
+  labels:
+    app.kubernetes.io/managed-by: configmanagement.gke.io
+subjects:
+- kind: ServiceAccount
+  name: ns-reconciler-my-app-repo-sync-rollout-17
+  namespace: config-management-system
+roleRef:
+  kind: Role
+  name: argo-rollout-manager
+  apiGroup: rbac.authorization.k8s.io
+
