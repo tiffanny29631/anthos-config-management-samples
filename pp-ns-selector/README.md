@@ -1,39 +1,29 @@
-# OSS Config Sync mixed-scope example
+# Hierarchical Config Sync example
 
-This directory is an **OSS Config Sync** example with:
+This directory is a minimal **hierarchical repo** example for Config Sync.
+It includes:
 
-- shared configs that install on **all clusters**
-- cluster-specific configs for a **single cluster**
-
-It avoids `cluster-name-selector` annotations and uses `RootSync.spec.git.dir`
-paths instead.
+- `system/repo.yaml` for repo metadata
+- Namespace definitions under `namespaces/`
+- Namespace-scoped ConfigMaps in each namespace directory
 
 ## Structure
 
 ```text
 pp-ns-selector/
-├── all-clusters/
-│   └── namespaces/
-│       └── team-b/
-│           ├── namespace.yaml
-│           └── configmap-app.yaml
-└── clusters/
-    └── cstest-manual/
-        └── namespaces/
-            └── team-a/
-                ├── namespace.yaml
-                ├── configmap-app.yaml
-                └── configmap-env.yaml
+├── system/
+│   └── repo.yaml
+└── namespaces/
+    ├── team-a/
+    │   ├── namespace.yaml
+    │   ├── configmap-app.yaml
+    │   └── configmap-env.yaml
+    └── team-b/
+        ├── namespace.yaml
+        └── configmap-app.yaml
 ```
 
-## How to use
+## Notes
 
-- Create one RootSync on **every cluster** for shared configs:
-  - `spec.git.dir: pp-ns-selector/all-clusters`
-- Create a second RootSync only on `cstest-manual` for cluster-specific configs:
-  - `spec.git.dir: pp-ns-selector/clusters/cstest-manual`
-
-With this setup:
-
-- `team-b` installs on all clusters
-- `team-a` installs only on `cstest-manual`
+- The `namespace.yaml` in each folder creates that namespace.
+- Other resources in the same folder are automatically applied to that namespace.

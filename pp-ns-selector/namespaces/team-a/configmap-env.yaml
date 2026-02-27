@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: env-settings
   namespace: team-a
+  annotations:
+    configsync.gke.io/cluster-name-selector: cstest-manual
 data:
   REGION: "us-central1"
   TIER: "sandbox"

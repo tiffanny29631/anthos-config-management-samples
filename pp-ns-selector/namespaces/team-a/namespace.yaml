@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Namespace
 metadata:
   name: team-a
+  annotations:
+    configsync.gke.io/cluster-name-selector: cstest-manual
   labels:
     owner: platform
     environment: dev

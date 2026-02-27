@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: app-settings
   namespace: team-a
+  annotations:
+    configsync.gke.io/cluster-name-selector: cstest-manual
 data:
   LOG_LEVEL: "debug"
   FEATURE_FLAG_X: "enabled"
