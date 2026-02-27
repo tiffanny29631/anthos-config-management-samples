@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: env-settings
+  namespace: team-a
+data:
+  REGION: "us-central1"
+  TIER: "sandbox"
