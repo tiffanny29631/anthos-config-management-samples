@@ -9,5 +9,5 @@ spec:
     repo: https://github.com/GoogleCloudPlatform/anthos-config-management-samples
     branch: main
     revision: HEAD
-    dir: pp-hierarchy/root-sync-content
+    dir: pp-hierarchy
     auth: none
