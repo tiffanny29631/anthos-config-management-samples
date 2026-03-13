@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: root-sync
+  namespace: config-management-system
+spec:
+  sourceFormat: hierarchy
+  git:
+    repo: https://github.com/GoogleCloudPlatform/anthos-config-management-samples
+    branch: main
+    revision: HEAD
+    dir: pp-hierarchy/root-sync-content
+    auth: none

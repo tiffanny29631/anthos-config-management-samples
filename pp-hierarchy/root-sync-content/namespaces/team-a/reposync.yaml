@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RepoSync
+metadata:
+  name: repo-sync
+  namespace: team-a
+spec:
+  sourceFormat: unstructured
+  git:
+    repo: https://github.com/GoogleCloudPlatform/anthos-config-management-samples
+    branch: main
+    revision: HEAD
+    dir: pp-hierarchy/reposync-content/team-a
+    auth: none
