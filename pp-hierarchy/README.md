@@ -35,5 +35,6 @@ pp-hierarchy/
 - `cluster/`, `namespaces/`, and `system/` at the top level form the RootSync hierarchical repo.
 - `root-sync-content/` is kept as an alternate copy of the same sample layout.
 - `namespaces/team-a/reposync.yaml` is the only nested RepoSync kept in this sample.
+- `namespaces/team-a/reposync-role-binding.yaml` grants the `ns-reconciler-team-a` ServiceAccount permission to manage and watch namespace resources.
 - Unstructured workload resources live under `pp-unstructured/`.
 - Update the Git URL/branch in `rootsync.yaml` and each `reposync.yaml` if you use a fork.
