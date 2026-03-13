@@ -6,8 +6,8 @@ metadata:
 spec:
   sourceFormat: unstructured
   git:
-    repo: https://github.com/GoogleCloudPlatform/anthos-config-management-samples
-    branch: main
+    repo: https://github.com/tiffanny29631/anthos-config-management-samples
+    branch: ns-selector
     revision: HEAD
     dir: pp-unstructured/team-a
     auth: none
