@@ -8,5 +8,5 @@ spec:
   git:
     repo: https://github.com/tiffanny29631/anthos-config-management-samples
     branch: ns-selector
-    dir: pp-unstructured-repro/team-a
+    dir: pp-unstructured/team-a
     auth: none
