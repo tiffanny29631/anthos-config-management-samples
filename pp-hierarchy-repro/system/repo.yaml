@@ -3,4 +3,5 @@ kind: Repo
 metadata:
   name: repo
 spec:
-  importPolicy: IfNotPresent
+  # Required for hierarchical repos; nomos vet rejects empty/missing version (KNV1027).
+  version: 1.0.0
