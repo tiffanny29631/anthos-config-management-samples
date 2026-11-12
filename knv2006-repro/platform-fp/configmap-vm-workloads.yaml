@@ -1,0 +1,10 @@
+# Namespaced object in a namespace that platform-fp does NOT declare.
+# With the default namespaceStrategy (implicit), Config Sync synthesizes
+# Namespace/vm-workloads for platform-fp if it doesn't exist yet.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: platform-config
+  namespace: vm-workloads
+data:
+  owner: platform-fp

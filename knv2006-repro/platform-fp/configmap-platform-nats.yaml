@@ -1,0 +1,10 @@
+# Second namespaced object in a second undeclared namespace.
+# KNV2006 only fires when the declared Namespace count drops from >= 2 to 0,
+# so platform-fp needs objects in two namespaces owned by cluster-fp.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: platform-config
+  namespace: platform-nats
+data:
+  owner: platform-fp

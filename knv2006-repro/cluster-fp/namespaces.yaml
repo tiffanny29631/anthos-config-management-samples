@@ -1,0 +1,10 @@
+# cluster-fp explicitly declares the namespaces that platform-fp uses.
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vm-workloads
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: platform-nats

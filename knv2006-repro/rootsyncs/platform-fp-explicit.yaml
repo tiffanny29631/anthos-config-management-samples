@@ -1,0 +1,18 @@
+# Control case: the proposed mitigation (comment #19 on b/579721612).
+# With namespaceStrategy: explicit, platform-fp never synthesizes implicit
+# namespaces, so the handoff to cluster-fp can't trigger KNV2006.
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: platform-fp
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  sourceType: git
+  git:
+    repo: https://github.com/tiffanny29631/anthos-config-management-samples
+    branch: knv2006-repro
+    dir: knv2006-repro/platform-fp
+    auth: none
+  override:
+    namespaceStrategy: explicit

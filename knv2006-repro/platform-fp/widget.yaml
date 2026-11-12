@@ -1,0 +1,12 @@
+# Custom resource whose CRD is declared by cluster-fp (stand-in for the
+# ExternalSecret / SecretStore objects in the customer repo).
+# While the CRD is missing, Config Sync skips this object (KNV1021, unknown
+# scope). Skipped objects force platform-fp to re-parse on the next retry,
+# which is what turns the namespace handoff into KNV2006.
+apiVersion: repro.example.com/v1
+kind: Widget
+metadata:
+  name: sample
+  namespace: vm-workloads
+spec:
+  size: 1

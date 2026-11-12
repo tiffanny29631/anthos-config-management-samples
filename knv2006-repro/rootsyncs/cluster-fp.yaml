@@ -1,0 +1,13 @@
+apiVersion: configsync.gke.io/v1beta1
+kind: RootSync
+metadata:
+  name: cluster-fp
+  namespace: config-management-system
+spec:
+  sourceFormat: unstructured
+  sourceType: git
+  git:
+    repo: https://github.com/tiffanny29631/anthos-config-management-samples
+    branch: knv2006-repro
+    dir: knv2006-repro/cluster-fp
+    auth: none
