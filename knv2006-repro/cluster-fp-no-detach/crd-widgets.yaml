@@ -1,0 +1,22 @@
+# cluster-fp installs the CRD used by platform-fp (stand-in for the
+# External Secrets CRDs in the customer repo).
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: widgets.repro.example.com
+spec:
+  group: repro.example.com
+  names:
+    kind: Widget
+    listKind: WidgetList
+    plural: widgets
+    singular: widget
+  scope: Namespaced
+  versions:
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        x-kubernetes-preserve-unknown-fields: true

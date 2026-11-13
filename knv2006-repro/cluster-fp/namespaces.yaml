@@ -1,10 +1,22 @@
 # cluster-fp explicitly declares the namespaces that platform-fp uses.
+#
+# The detach annotation matches what's on the customer's clusters
+# (us05912cls01: both namespaces keep client.lifecycle.config.k8s.io/deletion:
+# detach after cluster-fp takes them over). Both RootSyncs apply with the same
+# field manager, so the annotation only survives the handoff if cluster-fp
+# declares it too. With it, a reconciler restart abandons the leftover
+# Namespace entries in ResourceGroup/platform-fp instead of looping on KNV2009.
+# See cluster-fp-no-detach/ for the variant without it.
 apiVersion: v1
 kind: Namespace
 metadata:
   name: vm-workloads
+  annotations:
+    client.lifecycle.config.k8s.io/deletion: detach
 ---
 apiVersion: v1
 kind: Namespace
 metadata:
   name: platform-nats
+  annotations:
+    client.lifecycle.config.k8s.io/deletion: detach

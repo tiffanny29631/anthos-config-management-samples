@@ -7,7 +7,8 @@ Two RootSyncs mirror the customer's Fleet Packages:
 | Dir | Mirrors | Contents |
 |---|---|---|
 | `platform-fp/` | `platform-fp` | Objects in `vm-workloads` and `platform-nats`, no `Namespace` objects, plus a `Widget` custom resource whose CRD isn't installed yet |
-| `cluster-fp/` | `cluster-fp` | `Namespace/vm-workloads`, `Namespace/platform-nats`, and the `widgets.repro.example.com` CRD |
+| `cluster-fp/` | `cluster-fp` | `Namespace/vm-workloads`, `Namespace/platform-nats` (with `client.lifecycle.config.k8s.io/deletion: detach`, as on the customer's clusters), and the `widgets.repro.example.com` CRD |
+| `cluster-fp-no-detach/` | variant D | Same as `cluster-fp/`, but the Namespaces don't declare `detach` |
 
 The race is forced by syncing `platform-fp` first, then `cluster-fp`.
 
@@ -70,14 +71,22 @@ kubectl get widgets -n vm-workloads
 kubectl rollout restart deploy/root-reconciler-platform-fp -n config-management-system
 ```
 
-Expected: KNV2006 clears and `Widget/sample` is created. Then check for leftovers in the inventory:
+Expected: KNV2006 clears. Check the inventory and errors right away and again after a minute or two:
 
 ```bash
-kubectl get resourcegroup platform-fp -n config-management-system -o jsonpath='{range .spec.resources[*]}{.kind}/{.name}{"\n"}{end}'
-kubectl get rootsync platform-fp -n config-management-system -o jsonpath='{.status.sync.errors}'
+kubectl get rootsync platform-fp -n config-management-system -o jsonpath='{range .status.sync.errors[*]}{.code}: {.errorMessage}{"\n"}{end}'
+kubectl get resourcegroup platform-fp -n config-management-system -o jsonpath='{range .spec.resources[*]}{.kind}/{.namespace}/{.name}{"\n"}{end}'
+kubectl get ns vm-workloads platform-nats -o 'custom-columns=NAME:.metadata.name,MANAGER:.metadata.annotations.configsync\.gke\.io/manager,DELETION:.metadata.annotations.client\.lifecycle\.config\.k8s\.io/deletion'
+kubectl get widgets -n vm-workloads
 ```
 
-If `Namespace/vm-workloads` or `Namespace/platform-nats` are still listed, or KNV2009 errors show up for objects in those namespaces, the restart alone isn't a clean recovery.
+Expected with `detach` on the namespaces (this setup, matching production):
+
+1. The first sync after the restart may report KNV2009 `dependency scheduled for delete` for objects in the two namespaces. The leftover Namespace entries are in the prune set, and the `detach` annotation makes Config Sync abandon them instead of deleting them.
+2. The Namespace entries disappear from `ResourceGroup/platform-fp`. The namespaces still exist and are still managed by `cluster-fp` (abandoning briefly strips Config Sync metadata, and `cluster-fp` restores it).
+3. The next sync applies the ConfigMaps and `Widget/sample` with no errors.
+
+This is why restarting the reconciler "just worked" on the customer's clusters. Compare with variant D.
 
 ## Variants (start each on a fresh cluster: `kind delete cluster --name knv2006`)
 
@@ -98,6 +107,28 @@ Run step 2, wait for it to sync, then run step 1. Expected: no KNV2006.
 ### C. Mitigation: namespaceStrategy explicit
 
 Use `rootsyncs/platform-fp-explicit.yaml` instead of `rootsyncs/platform-fp.yaml` in step 1. Expected: `platform-fp` reports apply errors for the missing namespaces until `cluster-fp` creates them, then converges. No KNV2006.
+
+### D. cluster-fp without detach (restart doesn't recover)
+
+Use `rootsyncs/cluster-fp-no-detach.yaml` instead of `rootsyncs/cluster-fp.yaml` in step 2, then run steps 3 and 4. Expected after the restart:
+
+```
+KNV2009: skipped apply of ConfigMap, platform-nats/platform-config: dependency scheduled for delete: _platform-nats__Namespace
+KNV2009: skipped apply of ConfigMap, vm-workloads/platform-config: dependency scheduled for delete: _vm-workloads__Namespace
+KNV2009: skipped apply of Widget.repro.example.com, vm-workloads/sample: dependency scheduled for delete: _vm-workloads__Namespace
+KNV2009: skipped delete of Namespace, /vm-workloads: namespace still in use: vm-workloads
+KNV2009: skipped delete of Namespace, /platform-nats: namespace still in use: platform-nats
+```
+
+`cluster-fp`'s apply removes the `detach` annotation that `platform-fp` set (both apply with the same field manager). The leftover Namespace entries can't be abandoned, so the prune is skipped on every sync and stays in `ResourceGroup/platform-fp`. Only the `namespace still in use` check keeps `platform-fp` from deleting `cluster-fp`'s namespaces.
+
+To recover, remove the two Namespace entries from the inventory:
+
+```bash
+kubectl get resourcegroup platform-fp -n config-management-system -o json \
+  | jq 'del(.spec.resources[] | select(.kind=="Namespace" and (.name=="vm-workloads" or .name=="platform-nats")))' \
+  | kubectl replace -f -
+```
 
 ## Cleanup
 

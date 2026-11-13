@@ -1,0 +1,15 @@
+# Variant D: cluster-fp declares the namespaces WITHOUT the detach annotation.
+# cluster-fp's apply strips the detach annotation that platform-fp set on the
+# implicit namespaces. After a reconciler restart, platform-fp's leftover
+# Namespace entries can't be abandoned, so the prune is skipped
+# ("namespace still in use") and everything platform-fp declares in these
+# namespaces stays blocked with KNV2009 ("dependency scheduled for delete").
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: vm-workloads
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: platform-nats
